@@ -11,8 +11,8 @@ This is a Python project to visualize various sorting algorithms using Pygame.
 
 ## Setup
 1. Clone the repository:
-   ```bash
    git clone https://github.com/yourusername/sorting-algorithm-visualizer.git
    cd sorting-algorithm-visualizer
-
+2. Create local environment
+3. Install requirements.txt
 
