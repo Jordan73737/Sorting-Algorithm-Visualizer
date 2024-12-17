@@ -14,6 +14,7 @@ class DrawInformation:
     GREY = 128, 128, 128
     BACKGROUND_COLOUR = WHITE
 
+    # shades of grey for the bars
     GRADIENTS = [
         (128, 128, 128),
         (160, 160, 160),
@@ -59,9 +60,8 @@ def generate_starting_list(n, min_val, max_val):
         lst.append(val) 
     return lst
     
-# makes the draw_info called in main to have white background colour which was defined above
 def draw(draw_info, algo_name, ascending):
-    draw_info.window.fill(draw_info.BACKGROUND_COLOUR) 
+    draw_info.window.fill(draw_info.BACKGROUND_COLOUR) # makes the draw_info called in main to have white background colour which was defined above
     
     # displays current sorting algorithm and whether its asc or desc
     title = draw_info.LARGE_FONT.render(f"{algo_name} - {'Ascending' if ascending else 'Descending'}", 1, draw_info.BLACK)
@@ -294,18 +294,16 @@ def main():
 
     # Loop to handle events occuring
     while run:
-        clock.tick(120) # max number of times loop can run per second
+        clock.tick(60) # max number of times loop can run per second
 
         if sorting:
             try:
                 next(sorting_algorithm_generator)
             except StopIteration:
                 sorting = False
-        else:
+        if not sorting:  # Only draw when sorting is not active
             draw(draw_info, sorting_algo_name, ascending)
 
-        draw(draw_info, sorting_algo_name, ascending)
-        pygame.display.update() # Updates the display 
 
 
         for event in pygame.event.get(): #Returns list of events that occured since last loop
