@@ -343,7 +343,7 @@ def main():
                 sorting_algo_name = "Shell Sort"
             elif event.key == pygame.K_m and not sorting:
                 sorting_algorithm = merge_sort
-                sorting_algo_name = "Merg Sort"
+                sorting_algo_name = "Merge Sort"
 
     pygame.quit() # When while loop breaks it ends the program
 
